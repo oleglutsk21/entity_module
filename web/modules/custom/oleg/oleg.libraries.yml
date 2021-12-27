@@ -1,0 +1,5 @@
+guest_book_page:
+  version: 1.x
+  css:
+    theme:
+      css/guest_book_page.css: {}
