@@ -1,0 +1,9 @@
+edit_configure:
+  title: 'Edit form'
+  route_name: 'entity.guest_book.edit_form'
+  group: 'oleg'
+
+delete_configure:
+  title: 'Delete form'
+  route_name: 'entity.guest_book.delete_form'
+  group: 'oleg'

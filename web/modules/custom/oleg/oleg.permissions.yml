@@ -1,0 +1,11 @@
+view review entity:
+  title: 'View Review entity'
+add review entity:
+  title: 'Add Review entity'
+edit review entity:
+  title: 'Edit Review entity'
+delete review entity:
+  title: 'Delete Review entity'
+administer review entity:
+  title: 'Administer Review entity'
+  restrict access: TRUE
