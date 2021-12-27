@@ -37,7 +37,7 @@ class GuestBookController extends ControllerBase {
   /**
    * Method that create output of module.
    */
-  public function showComments(): array {
+  public function showComments() {
 
     $comments = [];
 

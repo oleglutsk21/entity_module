@@ -1,5 +1,5 @@
 # Route name can be used in several places; e.g. links, redirects, and local actions.
-entity.guest_book.page:
+entity.oleg.page:
   path: '/guest-book'
   defaults:
     # Calls the view controller, defined in the annotation of the review entity
