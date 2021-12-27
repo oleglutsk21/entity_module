@@ -1,0 +1,65 @@
+# Route name can be used in several places; e.g. links, redirects, and local actions.
+entity.guest_book.page:
+  path: '/guest-book'
+  defaults:
+    # Calls the view controller, defined in the annotation of the review entity
+    _controller: '\Drupal\oleg\Controller\GuestBookController::showComments'
+    _title: 'Guest book'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+    _permission: 'access content'
+
+entity.guest_book.canonical:
+  path: '/guest-book/{guest_book}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the review entity
+    _entity_view: 'guest_book'
+    _title: 'Review Content'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'guest_book.view'
+
+entity.guest_book.collection:
+  path: '/guest-book/list'
+  defaults:
+    # Calls the list controller, defined in the annotation of the review entity.
+    _entity_list: 'guest_book'
+    _title: 'Comments List'
+  requirements:
+    # Checks for permission directly.
+    _permission: 'administer review entity'
+
+guest_book.comment_add:
+  path: '/guest-book/add'
+  defaults:
+    # Calls the form.add controller, defined in the review entity.
+    _entity_form: guest_book.add
+    _title: 'Add comment'
+  requirements:
+    _entity_create_access: 'guest_book'
+
+entity.guest_book.edit_form:
+  path: '/guest-book/{guest_book}/edit'
+  defaults:
+    # Calls the form.edit controller, defined in the review entity.
+    _entity_form: guest_book.edit
+    _title: 'Edit comment'
+  requirements:
+    _entity_access: 'guest_book.edit'
+
+entity.guest_book.delete_form:
+  path: '/guest-book/{guest_book}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the review entity.
+    _entity_form: guest_book.delete
+    _title: 'Delete comment'
+  requirements:
+    _entity_access: 'guest_book.delete'
+
+guest_book.review_settings:
+  path: 'admin/structure/guest_book'
+  defaults:
+    _form: '\Drupal\oleg\Form\GuestBookSettingsForm'
+    _title: 'Guest book settings'
+  requirements:
+    _permission: 'administer review entity'
