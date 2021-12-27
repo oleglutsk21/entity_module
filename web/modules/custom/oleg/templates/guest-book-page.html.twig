@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default template for the page of the Guest book module.
+ * Available variables:
+
+ * - form: Html form for adding comments.
+ * - comments: Variable to display comments
+ * - pager: Pager for comments view
+ * @ingroup templates
+ *
+ */
+#}
+
+{{ attach_library('oleg/guest_book_page') }}
+<div class="guest-book__page-wrapper">
+    <h1 class="comments-page__title">Hello! You can add here comments, impressions and wishes.</h1>
+        {{ form }}
+
+    <div class="guest-book__comments-list">
+
+        {{ comments }}
+
+    </div>
+
+        {{ pager }}
+
+</div>
