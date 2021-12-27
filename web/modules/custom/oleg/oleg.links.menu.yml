@@ -1,0 +1,20 @@
+# Define the menu links for this module
+
+entity.guest_book.page:
+  title: 'Guest book page'
+  route_name: entity.guest_book.page
+  description: 'Guest book page'
+  parent: system.admin_structure
+  weight: 30
+entity.guest_book.collection:
+  title: 'Guest book: Reviews listing'
+  route_name: entity.guest_book.collection
+  description: 'List Reviews'
+  parent: system.admin_structure
+  weight: 31
+oleg.admin.structure.settings:
+  title: Review Settings
+  descriotion: 'Configure Review entity'
+  route_name: guest_book.review_settings
+  parent: system.admin_structure
+  weight: 32

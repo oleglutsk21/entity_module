@@ -18,7 +18,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *   label = @Translation("Guest book entity"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\oleg\Controller\GuestBookController",
+ *     "list_builder" = "Drupal\oleg\CommentsListBuilders",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "add" = "Drupal\oleg\Form\GuestBookForm",
@@ -98,7 +98,7 @@ class GuestBook extends ContentEntityBase implements ContentEntityInterface {
       ->setLabel(t('Your email:'))
       ->setDescription(t('Write your email e.g.: example@example.ex'))
       ->setSettings([
-        'default_value' => '',
+        'default_value' => NULL,
         'max_length' => 225,
         'text_processing' => 0,
       ])
