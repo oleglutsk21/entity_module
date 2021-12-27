@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Define hook_theme.
+ */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function oleg_theme($existing, $type, $theme, $path) {
+  return [
+    'guest_book_page' => [
+      'variables' => [
+        'form' => [],
+        'comments' => [],
+        'pager' => [],
+      ],
+    ],
+    'guest_book' => [
+      'template' => 'comments-view',
+      'render element' => 'elements',
+    ]
+  ];
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function oleg_preprocess_guest_book(&$variables, $hook) {
+  $variables['content'] = [];
+
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  /** @var \Drupal\oleg\Entity\GuestBook $entity */
+  $entity = $variables['elements']['#guest_book'];
+
+  // Add default avatar.
+  if (empty($entity->user_avatar->target_id)) {
+        $variables['content']['user_avatar'] = [
+          '#theme' => 'image',
+          '#uri' => '/modules/custom/oleg/files/avatar_default.png',
+        ];
+      }
+
+}
