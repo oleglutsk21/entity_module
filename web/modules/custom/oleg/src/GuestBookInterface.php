@@ -11,6 +11,6 @@ use Drupal\Core\Entity\EntityChangedInterface;
  *
  * @ingroup oleg
  */
-interface OlegInterface extends ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface {
+interface GuestBookInterface extends ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface {
 
 }

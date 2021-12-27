@@ -15,7 +15,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *
  * @ContentEntityType(
  *   id = "guest_book",
- *   label = @Translation("Guest book comments entity"),
+ *   label = @Translation("Guest book entity"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\oleg\Controller\GuestBookController",
