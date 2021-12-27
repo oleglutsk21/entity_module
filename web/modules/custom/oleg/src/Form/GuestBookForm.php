@@ -23,7 +23,7 @@ class GuestBookForm extends ContentEntityForm {
     $form['user_name']['widget'][0]['value']['#ajax'] = [
       'callback' => '::ajaxUserNameValidate',
       'disable-refocus' => TRUE,
-      'event' => 'keyup',
+      'event' => 'change',
       'progress' => [
         'type' => 'none',
       ],
@@ -33,7 +33,7 @@ class GuestBookForm extends ContentEntityForm {
     $form['user_email']['widget'][0]['value']['#ajax'] = [
       'callback' => '::ajaxEmailValidate',
       'disable-refocus' => TRUE,
-      'event' => 'keyup',
+      'event' => 'change',
       'progress' => [
         'type' => 'none',
       ],
@@ -43,7 +43,7 @@ class GuestBookForm extends ContentEntityForm {
     $form['user_phone']['widget'][0]['value']['#ajax'] = [
       'callback' => '::ajaxPhoneValidate',
       'disable-refocus' => TRUE,
-      'event' => 'keyup',
+      'event' => 'change',
       'progress' => [
         'type' => 'none',
       ],

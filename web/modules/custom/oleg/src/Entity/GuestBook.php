@@ -126,7 +126,7 @@ class GuestBook extends ContentEntityBase implements ContentEntityInterface {
       ->setDescription(t('Write your telephone number e.g.: +999999999999'))
       ->setSettings([
         'default_value' => NULL,
-        'max_length' => 12,
+        'max_length' => 13,
         'text_processing' => 0,
       ])
       ->setPropertyConstraints('value', [
@@ -197,7 +197,7 @@ class GuestBook extends ContentEntityBase implements ContentEntityInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['user_image'] = BaseFieldDefinition::create('image')
-      ->setLabel(t('Your image'))
+      ->setLabel(t('Your image:'))
       ->setDescription(t('Image should be less than 5 MB and in JPEG, JPG or PNG format.'))
       ->setSettings([
         'file_directory' => 'guest_book/images/',
